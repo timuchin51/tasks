@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import os.path
 import re
 import operator
 from sys import argv
@@ -12,7 +11,6 @@ def most_common_words(argv):
         number_of_words = 1
     else:
         number_of_words = int(argv[2])
-    # if os.path.exists(file_name):
     with open(file_name, 'r') as text_file:
         text = re.findall('(?i)[a-z\'?a-z]+', text_file.read())
 
