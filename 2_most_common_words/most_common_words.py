@@ -13,12 +13,17 @@ def split_the_text(file_name):
     return sorted(counted_words, key=operator.itemgetter(1))
 
 
-def get_most_common_words(argv):
+def get_command_line_arguments(argv):
     file_name = argv[1]
     if len(argv) < 3:
         number_of_words = 1
     else:
         number_of_words = int(argv[2])
+    return file_name, number_of_words
+
+
+def get_most_common_words(argv):
+    file_name, number_of_words = get_command_line_arguments(argv)
     sorted_words = split_the_text(file_name)
     words_and_frequency = sorted_words[-int(number_of_words):]
     for pare in words_and_frequency:
